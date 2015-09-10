@@ -1,0 +1,14 @@
+img {
+  max-width: 100%;
+  padding: 15px;
+  border: solid thin black;
+}
+
+figcaption {
+    text-align: right;
+    font-style: italic;
+}
+
+html {
+       overflow-y: scroll;
+}
