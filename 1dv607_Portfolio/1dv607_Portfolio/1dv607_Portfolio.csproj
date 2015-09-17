@@ -35,6 +35,8 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+    <Content Include="Workshop1-KristofferSvenssonsgrupp.pdf" />
+    <Content Include="Workshop1-PatrikErlandssonsgrupp.pdf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
