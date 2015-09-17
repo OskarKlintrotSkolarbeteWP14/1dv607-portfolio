@@ -67,7 +67,7 @@
                     med påpekningar som även var uppbackade av källhänvisningar.
                     <ol>
                         <li>
-                            Vad betyder texten i rutan till vänster? Om det är attribut som är viktiga för domänen bör de vara med i modellen enligt Larman [1, p158, ch9.16].
+                            "Vad betyder texten i rutan till vänster? Om det är attribut som är viktiga för domänen bör de vara med i modellen enligt Larman [1, p158, ch9.16]."
                             <ul>
                                 <li>
                                     Åtgärdat, rutan med text var en rest från när vi arbetade med dokumentet och borde helt riktigt inte vara med i domän modellen.
@@ -75,8 +75,8 @@
                             </ul>
                         </li>
                         <li>
-                            Pilen mellan Sekreterare och Medlem tolkar vi inte som en läsriktningspil i och med att den inte ser lika ut som de andra pilarna. 
-                            Har ni tänkt förbi domänmodellen och börjat tänka designmodell? Se Larman [1, p138, ch9.3]
+                            "Pilen mellan Sekreterare och Medlem tolkar vi inte som en läsriktningspil i och med att den inte ser lika ut som de andra pilarna. 
+                            Har ni tänkt förbi domänmodellen och börjat tänka designmodell? Se Larman [1, p138, ch9.3]"
                             <ul>
                                 <li>
                                     Pilen indikerar super- och subklass enligt Larman, se sidan 505 i kurslitteraturen angående super- och subklasser i kapitlet 
@@ -85,7 +85,7 @@
                             </ul>
                         </li>
                         <li>
-                            Klassen Båtbeskrivning skulle kunna tas bort enligt Larman [1, p147-148, ch9.13]
+                            "Klassen Båtbeskrivning skulle kunna tas bort enligt Larman [1, p147-148, ch9.13]"
                             <ul>
                                 <li>
                                     Enligt exemplet på källhänvisningen bör den vara kvar. Säg exempelvis att vi har haft flera ägare av optimistjollar. Om 
@@ -97,9 +97,9 @@
                             </ul>
                         </li>
                         <li>
-                            När det gäller klassen Bokning ser det ut som att ni tänkt mer datamodellering, och att den då skulle vara en relationstabell. 
+                            "När det gäller klassen Bokning ser det ut som att ni tänkt mer datamodellering, och att den då skulle vara en relationstabell. 
                             I domänmodellen anser vi den inte tillföra något. Enligt Larman [1, p135, ch9.2] ska en domänmodell visa verkligheten, inte 
-                            mjukvaruklasser eller mjukvaruartefakter.
+                            mjukvaruklasser eller mjukvaruartefakter."
                             <ul>
                                 <li>
                                     Vår modell följer återigen källhänvisningens riktlinjer. På sidan 135 finns Figure 9.3 vilken ser mer eller mindre 
@@ -110,11 +110,13 @@
                             </ul>
                         </li>
                     </ol>
+                </p>
+                <p>
                     Två punkter som dök upp i båda gruppernas feedback som är väl värd att diskutera kring är dessa:
                     <ul>
                         <li>
-                            Hur går det till när en sekreterare bokar en båt? Borde det inte vara en relation mellan sekreterare och bokning? Vi läser det 
-                            som att en båt hanterar sin bokning själv
+                            "Hur går det till när en sekreterare bokar en båt? Borde det inte vara en relation mellan sekreterare och bokning? Vi läser det 
+                            som att en båt hanterar sin bokning själv"
                             <ul>
                                 <li>
                                     Så tänkte vi också först tills vi diskuterade med vår handledare. Handledaren påpekade att det är inte viktigt <em>hur</em> 
@@ -126,12 +128,12 @@
                             </ul>
                         </li>
                         <li>
-                            Vad är händelser? Det framgår inte av domänmodellen, och den är inte heller associerad till
+                            "Vad är händelser? Det framgår inte av domänmodellen, och den är inte heller associerad till
                             någon annan klass i modellen. Har ni tänkt det som en egen domän? En association mellan
                             Händelse (vi antar att det är olika event) och Sekreterare skulle annars förtydliga mycket, då
                             det är sekreteraren som administrerar eventen enligt Use Case 10. Händelse är ett brett
                             begrepp som skulle kunna innebära betalning av avgift, registrering av båt och lite allt möjligt.
-                            Kanske t.ex. event är ett bättre namn?
+                            Kanske t.ex. event är ett bättre namn?"
                             <ul>
                                 <li>
                                     Vi håller med om att Händelse är väldigt vagt och att Event är mycket tydligare beskrivet. Återigen är tankegångarna i övrigt som 
