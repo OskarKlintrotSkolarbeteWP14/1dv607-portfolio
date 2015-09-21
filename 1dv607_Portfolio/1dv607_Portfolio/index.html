@@ -41,6 +41,26 @@
                     </a>
                     <figcaption>The domain model from Workshop I</figcaption>
                 </figure>
+                <p>
+                    Förtydliganden kring vår domän modell:
+                    <ul>
+                        <li>
+                            Sekreterare är subklass till superklassen Medlem.
+                        </li>
+                        <li>
+                            Event står för sig själv utan association eftersom ingen av de andra klasserna över tid behöver vara knutna till den. 
+                            Exempelvis behöver inte sekreteraren ha en "Administrerar"-association eftersom vi enligt kraven inte ser någon vikt av 
+                            att se vilken sekreterare som lagt till respektive event.
+                        </li>
+                        <li>
+                            Båtbeskrivning är en egen klass, istället för attribut till båt, eftersom det möjliggör att en båtbeskrivning kan återanvändas 
+                            av flera medlemmar med båtar av samma modell och inte är så direkt knuten till en specifik båt att den försvinner om en medlem väljer att avregistrera sin båt.
+                        </li>
+                        <li>
+                            Bokning kan jämföras med ett kvitto på båtens bokning av kajplats och innehåller bokningens varaktighet.
+                        </li>
+                    </ul>
+                </p>
                 <h3>
                     Peer Review
                 </h3>
