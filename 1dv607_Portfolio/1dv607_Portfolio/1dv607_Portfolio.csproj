@@ -29,14 +29,16 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Workshop1\Christoffer Ekbloms, Daniel Svenssons och Oskar Klintrots projekt.pdf" />
+    <Content Include="Workshop1\PeerRewiewWorkshop1-Christoffer.pdf" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
-    <Content Include="Workshop1-KristofferSvenssonsgrupp.pdf" />
-    <Content Include="Workshop1-PatrikErlandssonsgrupp.pdf" />
+    <Content Include="Workshop1\Workshop1-KristofferSvenssonsgrupp.pdf" />
+    <Content Include="Workshop1\Workshop1-PatrikErlandssonsgrupp.pdf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
