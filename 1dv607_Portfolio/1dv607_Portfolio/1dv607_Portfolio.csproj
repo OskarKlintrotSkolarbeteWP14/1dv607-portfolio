@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -39,6 +39,8 @@
     </None>
     <Content Include="Workshop1\Workshop1-KristofferSvenssonsgrupp.pdf" />
     <Content Include="Workshop1\Workshop1-PatrikErlandssonsgrupp.pdf" />
+    <Content Include="Workshop2\Workshop2-PeerReviewAndreasAnemyr.pdf" />
+    <Content Include="Workshop2\Workshop2-PeerReviewRobinKarlsson.pdf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

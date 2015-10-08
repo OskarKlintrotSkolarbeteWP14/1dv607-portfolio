@@ -64,129 +64,188 @@
                 <h3>
                     Peer Review
                 </h3>
-                <h4>
-                    Våra Peer Reviews
-                </h4>
-                <p>
-                    Våra Peer Review finns tillgängliga som PDF:
-                    <ul>
-                        <li>
-                            <a href="Workshop1/Workshop1-KristofferSvenssonsgrupp.pdf">Feedback på Kristoffer Svenssons grupp</a>
-                        </li>
-                        <li>
-                            <a href="Workshop1/Workshop1-PatrikErlandssonsgrupp.pdf">Feedback på Patrik Erlandssons grupp</a>
-                        </li>
-                    </ul>
-                </p>
-                <h4>
-                    Feedback på vårt arbete
-                </h4>
-                <p>
-                    De Peer Review som vi fick finns tillgängliga som PDF:
-                    <ul>
-                        <li>
-                            <a href="Workshop1/Christoffer Ekbloms, Daniel Svenssons och Oskar Klintrots projekt.pdf">Feedback från Caroline Forslund, Johanna Szepanski och Lisa Westlund</a>
-                        </li>
-                        <li>
-                            <a href="Workshop1/PeerRewiewWorkshop1-Christoffer.pdf">Feedback från Rebecca Fransson, Hampus Jarleborn och Richard Söderman</a>
-                        </li>
-                    </ul>
-                    Av den ena gruppen fick vi ingen vettig feedback, det var bara en punktlista där alla punkterna i slutet hänvisade till kurslitteraturen, 
-                    utan sidnummer. Av den andra gruppen fick vi bättre feedback, även om det var ganska magert med källhänvisningar. Det blev fyra punkter 
-                    med påpekningar som även var uppbackade av källhänvisningar.
-                    <ol>
-                        <li>
-                            "Vad betyder texten i rutan till vänster? Om det är attribut som är viktiga för domänen bör de vara med i modellen enligt Larman [1, p158, ch9.16]."
-                            <ul>
-                                <li>
-                                    Åtgärdat, rutan med text var en rest från när vi arbetade med dokumentet och borde helt riktigt inte vara med i domän modellen.
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            "Pilen mellan Sekreterare och Medlem tolkar vi inte som en läsriktningspil i och med att den inte ser lika ut som de andra pilarna. 
-                            Har ni tänkt förbi domänmodellen och börjat tänka designmodell? Se Larman [1, p138, ch9.3]"
-                            <ul>
-                                <li>
-                                    Pilen indikerar super- och subklass enligt Larman, se sidan 505 i kurslitteraturen angående super- och subklasser i kapitlet 
-                                    “Domain Model Refinement”.
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            "Klassen Båtbeskrivning skulle kunna tas bort enligt Larman [1, p147-148, ch9.13]"
-                            <ul>
-                                <li>
-                                    Enligt exemplet på källhänvisningen bör den vara kvar. Säg exempelvis att vi har haft flera ägare av optimistjollar. Om 
-                                    alla ägarna gör sig av med sina båtar måste vi på nytt lägga in LOA, BOA, vikt och så vidare när det kommer en ny 
-                                    optimistjolle-ägare. Dessutom måste vi göra det för varje enskild ägare istället för att vi bara behöver lägga in en 
-                                    båtmodell en gång när den modellen för första gången dyker upp i klubben. Vår lösning är gjord enligt Figure 9.9 på sidan 
-                                    148 i kurslitteraturen.
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            "När det gäller klassen Bokning ser det ut som att ni tänkt mer datamodellering, och att den då skulle vara en relationstabell. 
-                            I domänmodellen anser vi den inte tillföra något. Enligt Larman [1, p135, ch9.2] ska en domänmodell visa verkligheten, inte 
-                            mjukvaruklasser eller mjukvaruartefakter."
-                            <ul>
-                                <li>
-                                    Vår modell följer återigen källhänvisningens riktlinjer. På sidan 135 finns Figure 9.3 vilken ser mer eller mindre 
-                                    exakt ut som vår klass Bokning. En bokning är dessutom i högsta grad ett verkligt koncept. Hur hade en bokning skötts 
-                                    i det gamla analoga systemet? Antagligen på papperslappar och vad är väl papperslappar om inte högst påtagligt 
-                                    fysiska objekt? Ett annat alternativ är förstås en kalender eller liggare men papperslappsmodellen är också tillämpbar.
-                                </li>
-                            </ul>
-                        </li>
-                    </ol>
-                </p>
-                <p>
-                    Två punkter som dök upp i båda gruppernas feedback som är väl värd att diskutera kring är dessa:
-                    <ul>
-                        <li>
-                            "Hur går det till när en sekreterare bokar en båt? Borde det inte vara en relation mellan sekreterare och bokning? Vi läser det 
-                            som att en båt hanterar sin bokning själv"
-                            <ul>
-                                <li>
-                                    Så tänkte vi också först tills vi diskuterade med vår handledare. Handledaren påpekade att det är inte viktigt <em>hur</em> 
-                                    bokningen går till, det hör till det dynamiska flödet, utan det viktiga är <em>vad</em> som hamnar i bokningen. Alltså är 
-                                    inte assiciationen mellan sekreteraren och bokningen intressant, såvida man inte är intresserad av att veta vilken 
-                                    sekreterare som har gjort bokningen. I instruktionerna har dock sekreteraren bara förekommit i singular vilket tyder på 
-                                    att de bara har en sekreterare. 
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            "Vad är händelser? Det framgår inte av domänmodellen, och den är inte heller associerad till
-                            någon annan klass i modellen. Har ni tänkt det som en egen domän? En association mellan
-                            Händelse (vi antar att det är olika event) och Sekreterare skulle annars förtydliga mycket, då
-                            det är sekreteraren som administrerar eventen enligt Use Case 10. Händelse är ett brett
-                            begrepp som skulle kunna innebära betalning av avgift, registrering av båt och lite allt möjligt.
-                            Kanske t.ex. event är ett bättre namn?"
-                            <ul>
-                                <li>
-                                    Vi håller med om att Händelse är väldigt vagt och att Event är mycket tydligare beskrivet. Återigen är tankegångarna i övrigt som 
-                                    för punkten ovan att det är oviktigt <em>vilken</em> sekreterare som lägger till en ny händelse. Innan vi konsulterade handledaren 
-                                    hade vi en Kalenderklass som satt fast i Event men handledaren påpekade att Kalender är en rapportklass utan egentligt eget syft 
-                                    (utan Event är den överflödig) och behöver därför inte vara med. Eftersom vi inte heller är intresserade över <em>vilken</em> 
-                                    medlem som tittar på Eventen så finns det ingen assiciation där heller.
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </p>
-            </div>
+                    <h4>
+                        Våra Peer Reviews
+                    </h4>
+                    <p>
+                        Våra Peer Review finns tillgängliga som PDF:
+                        <ul>
+                            <li>
+                                <a href="Workshop1/Workshop1-KristofferSvenssonsgrupp.pdf">Feedback på Kristoffer Svenssons grupp</a>
+                            </li>
+                            <li>
+                                <a href="Workshop1/Workshop1-PatrikErlandssonsgrupp.pdf">Feedback på Patrik Erlandssons grupp</a>
+                            </li>
+                        </ul>
+                    </p>
+                    <h4>
+                        Feedback på vårt arbete
+                    </h4>
+                    <p>
+                        De Peer Review som vi fick finns tillgängliga som PDF:
+                        <ul>
+                            <li>
+                                <a href="Workshop1/Christoffer Ekbloms, Daniel Svenssons och Oskar Klintrots projekt.pdf">Feedback från Caroline Forslund, Johanna Szepanski och Lisa Westlund</a>
+                            </li>
+                            <li>
+                                <a href="Workshop1/PeerRewiewWorkshop1-Christoffer.pdf">Feedback från Rebecca Fransson, Hampus Jarleborn och Richard Söderman</a>
+                            </li>
+                        </ul>
+                        Av den ena gruppen fick vi ingen vettig feedback, det var bara en punktlista där alla punkterna i slutet hänvisade till kurslitteraturen,
+                        utan sidnummer. Av den andra gruppen fick vi bättre feedback, även om det var ganska magert med källhänvisningar. Det blev fyra punkter
+                        med påpekningar som även var uppbackade av källhänvisningar.
+                        <ol>
+                            <li>
+                                "Vad betyder texten i rutan till vänster? Om det är attribut som är viktiga för domänen bör de vara med i modellen enligt Larman [1, p158, ch9.16]."
+                                <ul>
+                                    <li>
+                                        Åtgärdat, rutan med text var en rest från när vi arbetade med dokumentet och borde helt riktigt inte vara med i domän modellen.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                "Pilen mellan Sekreterare och Medlem tolkar vi inte som en läsriktningspil i och med att den inte ser lika ut som de andra pilarna.
+                                Har ni tänkt förbi domänmodellen och börjat tänka designmodell? Se Larman [1, p138, ch9.3]"
+                                <ul>
+                                    <li>
+                                        Pilen indikerar super- och subklass enligt Larman, se sidan 505 i kurslitteraturen angående super- och subklasser i kapitlet
+                                        “Domain Model Refinement”.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                "Klassen Båtbeskrivning skulle kunna tas bort enligt Larman [1, p147-148, ch9.13]"
+                                <ul>
+                                    <li>
+                                        Enligt exemplet på källhänvisningen bör den vara kvar. Säg exempelvis att vi har haft flera ägare av optimistjollar. Om
+                                        alla ägarna gör sig av med sina båtar måste vi på nytt lägga in LOA, BOA, vikt och så vidare när det kommer en ny
+                                        optimistjolle-ägare. Dessutom måste vi göra det för varje enskild ägare istället för att vi bara behöver lägga in en
+                                        båtmodell en gång när den modellen för första gången dyker upp i klubben. Vår lösning är gjord enligt Figure 9.9 på sidan
+                                        148 i kurslitteraturen.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                "När det gäller klassen Bokning ser det ut som att ni tänkt mer datamodellering, och att den då skulle vara en relationstabell.
+                                I domänmodellen anser vi den inte tillföra något. Enligt Larman [1, p135, ch9.2] ska en domänmodell visa verkligheten, inte
+                                mjukvaruklasser eller mjukvaruartefakter."
+                                <ul>
+                                    <li>
+                                        Vår modell följer återigen källhänvisningens riktlinjer. På sidan 135 finns Figure 9.3 vilken ser mer eller mindre
+                                        exakt ut som vår klass Bokning. En bokning är dessutom i högsta grad ett verkligt koncept. Hur hade en bokning skötts
+                                        i det gamla analoga systemet? Antagligen på papperslappar och vad är väl papperslappar om inte högst påtagligt
+                                        fysiska objekt? Ett annat alternativ är förstås en kalender eller liggare men papperslappsmodellen är också tillämpbar.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        Två punkter som dök upp i båda gruppernas feedback som är väl värd att diskutera kring är dessa:
+                        <ul>
+                            <li>
+                                "Hur går det till när en sekreterare bokar en båt? Borde det inte vara en relation mellan sekreterare och bokning? Vi läser det
+                                som att en båt hanterar sin bokning själv"
+                                <ul>
+                                    <li>
+                                        Så tänkte vi också först tills vi diskuterade med vår handledare. Handledaren påpekade att det är inte viktigt <em>hur</em>
+                                        bokningen går till, det hör till det dynamiska flödet, utan det viktiga är <em>vad</em> som hamnar i bokningen. Alltså är
+                                        inte assiciationen mellan sekreteraren och bokningen intressant, såvida man inte är intresserad av att veta vilken
+                                        sekreterare som har gjort bokningen. I instruktionerna har dock sekreteraren bara förekommit i singular vilket tyder på
+                                        att de bara har en sekreterare.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                "Vad är händelser? Det framgår inte av domänmodellen, och den är inte heller associerad till
+                                någon annan klass i modellen. Har ni tänkt det som en egen domän? En association mellan
+                                Händelse (vi antar att det är olika event) och Sekreterare skulle annars förtydliga mycket, då
+                                det är sekreteraren som administrerar eventen enligt Use Case 10. Händelse är ett brett
+                                begrepp som skulle kunna innebära betalning av avgift, registrering av båt och lite allt möjligt.
+                                Kanske t.ex. event är ett bättre namn?"
+                                <ul>
+                                    <li>
+                                        Vi håller med om att Händelse är väldigt vagt och att Event är mycket tydligare beskrivet. Återigen är tankegångarna i övrigt som
+                                        för punkten ovan att det är oviktigt <em>vilken</em> sekreterare som lägger till en ny händelse. Innan vi konsulterade handledaren
+                                        hade vi en Kalenderklass som satt fast i Event men handledaren påpekade att Kalender är en rapportklass utan egentligt eget syft
+                                        (utan Event är den överflödig) och behöver därför inte vara med. Eftersom vi inte heller är intresserade över <em>vilken</em>
+                                        medlem som tittar på Eventen så finns det ingen assiciation där heller.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+</div>
         </div>
         <div>
             <h2 id="WorkshopII">
-                » Workshop 2 - 
+                » Workshop 2 - Design [EN]
             </h2>
             <div>
                 <h3>
-                    
+                    Design
+                </h3>
+                <figure>
+                    <a href="https://raw.githubusercontent.com/rn222cx/1dv607-OOP/master/Workshop%202%20-%20Design/source_code/ModelingProject/Pictures/DesignModel.png">
+                        <img src="https://raw.githubusercontent.com/rn222cx/1dv607-OOP/master/Workshop%202%20-%20Design/source_code/ModelingProject/Pictures/DesignModel.png">
+                    </a>
+                    <figcaption>Design model from Workshop II</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://raw.githubusercontent.com/rn222cx/1dv607-OOP/master/Workshop%202%20-%20Design/source_code/ModelingProject/Pictures/CompactListSequenceDiagram.png">
+                        <img src="https://raw.githubusercontent.com/rn222cx/1dv607-OOP/master/Workshop%202%20-%20Design/source_code/ModelingProject/Pictures/CompactListSequenceDiagram.png">
+                    </a>
+                    <figcaption>Compact List Sequence Diagram from Workshop II</figcaption>
+                </figure>
+                <figure>
+                    <a href="https://raw.githubusercontent.com/rn222cx/1dv607-OOP/master/Workshop%202%20-%20Design/source_code/ModelingProject/Pictures/AddNewMemberSequenceDiagram.png">
+                        <img src="https://raw.githubusercontent.com/rn222cx/1dv607-OOP/master/Workshop%202%20-%20Design/source_code/ModelingProject/Pictures/AddNewMemberSequenceDiagram.png">
+                    </a>
+                    <figcaption>Add New Member Sequence Diagram from Workshop II</figcaption>
+                </figure>
+                <h3>
+                    Source Code
                 </h3>
                 <p>
-
+                    <ul>
+                        <li>
+                            <a href="https://github.com/rn222cx/1dv607-OOP/raw/master/Workshop%202%20-%20Design/source_code/Workshop_2_Realese_Build.exe">The executable file</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/rn222cx/1dv607-OOP/tree/master/Workshop%202%20-%20Design/source_code">The source code</a>
+                        </li>
+                    </ul>
+                </p>
+                <h3>
+                    Peer Review
+                </h3>
+                <h4>
+                    Our Peer Reviews
+                </h4>
+                <p>
+                    Our Peer Review is avalible as PDF:
+                    <ul>
+                        <li>
+                            <a href="Workshop2/Workshop2-PeerReviewAndreasAnemyr.pdf">Feedback on Andreas Anemyr</a>
+                        </li>
+                        <li>
+                            <a href="Workshop2/Workshop2-PeerReviewRobinKarlsson.pdf">Feedback on Robin Karlsson</a>
+                        </li>
+                    </ul>
+                </p>
+                <h4>
+                    Feedback on our workshop
+                </h4>
+                <p>
+                    The Peer Review that we got where is avalible as PDF:
+                    <ul>
+                        <li>
+                            <a href="Workshop2/.pdf">Feedback from Mattias Wikström, Anna Iosif and Jasmin Bejtovic</a>
+                        </li>
+                        <li>
+                            <a href="Workshop2/.pdf">Feedback from Alexandre Driaguine, Wictor Kihlbaum and Niklas Johannesson</a>
+                        </li>
+                    </ul>
                 </p>
             </div>
         </div>
