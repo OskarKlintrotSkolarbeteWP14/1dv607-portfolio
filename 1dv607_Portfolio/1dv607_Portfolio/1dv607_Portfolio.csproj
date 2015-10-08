@@ -28,6 +28,7 @@
     <Content Include="index.html" />
     <Content Include="sticky-footer.css" />
     <Content Include="web.config" />
+    <Content Include="Workshop2\peer_review_for_roy_nilsson__oskar_klintrot_and_mikael_eriksson.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Workshop1\Christoffer Ekbloms, Daniel Svenssons och Oskar Klintrots projekt.pdf" />
