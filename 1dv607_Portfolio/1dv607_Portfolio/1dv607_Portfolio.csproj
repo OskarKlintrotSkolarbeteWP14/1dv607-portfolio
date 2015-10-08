@@ -24,6 +24,7 @@
   <ItemGroup>
     <Content Include="fulhack.css" />
     <Content Include="Fulhack.js" />
+    <None Include="CNAME" />
     <Content Include="index.html" />
     <Content Include="sticky-footer.css" />
     <Content Include="web.config" />
